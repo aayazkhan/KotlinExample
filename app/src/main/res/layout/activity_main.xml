@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueDark"
+    android:padding="40dp">
+
+    <ImageView
+        android:id="@+id/imageViewBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_left_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/linearLayoutTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/linearLayoutTitle" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="@string/liberty"
+            android:textAllCaps="true"
+            android:textColor="@color/colorSkyBlue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="@string/and"
+            android:textAllCaps="true"
+            android:textColor="@color/colorOrangeLite"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="@string/passage"
+            android:textAllCaps="true"
+            android:textColor="@color/colorOrangeLite"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutTitle">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_background_orange_lite" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_background_orange_lite" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_background_orange_dark" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_background_orange_dark" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewMyTemperatureTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/my_temperature"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutSeparator" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutMyTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:layout_margin="20dp"
+        app:layout_constraintEnd_toEndOf="@id/textViewMyTemperatureTitle"
+        app:layout_constraintStart_toStartOf="@id/textViewMyTemperatureTitle"
+        app:layout_constraintTop_toBottomOf="@id/textViewMyTemperatureTitle">
+
+        <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+            android:id="@+id/circularProgress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:direction="clockwise"
+            app:dotColor="@color/colorWhite"
+            app:dotWidth="20dp"
+            app:drawDot="true"
+            app:enableProgressAnimation="true"
+            app:gradientEndColor="@color/colorOrangeLite"
+            app:gradientType="linear"
+            app:progressBackgroundColor="@color/colorCircularSeekbar"
+            app:progressBackgroundStrokeWidth="10dp"
+            app:progressCap="round"
+            app:progressColor="@color/colorSkyBlue"
+            app:progressStrokeWidth="8dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutMyTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textViewMyTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="98"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="60sp" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/circle_background_white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/celcius"
+                android:textColor="@color/colorBlueLiteExtra"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="@id/linearLayoutMyTemperature"
+                app:layout_constraintStart_toStartOf="@id/linearLayoutMyTemperature"
+                app:layout_constraintTop_toBottomOf="@id/linearLayoutMyTemperature" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMyTemperatureButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/relativeLayoutMyTemperature">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_background_celcius"
+            android:text="@string/celcius"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_background_farenheit"
+            android:text="@string/farenheit"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlueLiteExtra" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewSeparator"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/circle_background_blue_lite_extra"
+        app:layout_constraintEnd_toEndOf="@id/linearLayoutMyTemperatureButtons"
+        app:layout_constraintStart_toStartOf="@id/linearLayoutMyTemperatureButtons"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutMyTemperatureButtons" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:layout_weight="1"
+        android:background="@drawable/orange_button_border_round_corner"
+        android:onClick="onNextClick"
+        android:text="@string/next"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/viewSeparator"
+        app:layout_constraintStart_toStartOf="@id/viewSeparator"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparator" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
